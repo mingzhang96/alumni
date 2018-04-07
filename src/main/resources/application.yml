@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  context-path: /alumni
+
+spring:
+  #数据源
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: qwer1234
+    url: jdbc:mysql://127.0.0.1:3306/alumni?characterEncoding=utf-8&useSSL=false
+
+#MyBatis配置
+mybatis:
+  type-aliases-package: cn.sihong.alumni.db.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
