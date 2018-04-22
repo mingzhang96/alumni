@@ -14,4 +14,6 @@ public interface UserService {
 
     public void updateUserById(User user);
 
+    public void updatePasswordByName(User user);
+
 }

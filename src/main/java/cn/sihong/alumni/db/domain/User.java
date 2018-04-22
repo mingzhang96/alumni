@@ -32,6 +32,7 @@ public class User {
     private String address;
     private String motto;
     private Integer isDeleted;
+    private String xm;
 
     private String password;
 

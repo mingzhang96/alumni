@@ -33,6 +33,9 @@ public class UserDao {
         userMapper.updateUserById(user);
     }
 
+    public void updatePasswordByName(User user) {
+        userMapper.updatePasswordByName(user);
+    }
 
 
 }

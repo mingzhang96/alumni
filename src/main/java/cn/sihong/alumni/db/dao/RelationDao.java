@@ -38,4 +38,13 @@ public class RelationDao {
         return relationMapper.findRelationByGradeId(gradeId);
     }
 
+    public void updateDelete(Relation relation) {
+        relationMapper.updateDelete(relation);
+    }
+
+    public void insertRelation(Relation relation) {
+        relationMapper.insertRelation(relation);
+    }
+
+
 }

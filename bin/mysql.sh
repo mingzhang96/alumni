@@ -81,4 +81,16 @@ insert into t_relation(user_id, school_id, grade_id) values(4, 2, 4);
 insert into t_relation(user_id, school_id, grade_id) values(5, 3, 5);
 
 
+CREATE TABLE t_message
+(
+   id int auto_increment PRIMARY KEY,
+   user_id int,
+   grade_id int,
+   message varchar(2000),
+   create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   finish_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   is_deleted int default 0
+);
+
+
 

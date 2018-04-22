@@ -11,4 +11,9 @@ public interface RelationService {
     public List<Relation> findRelationBySchoolId(int schoolId);
 
     public List<Relation> findRelationByGradeId(int gradeId);
+
+    public void updateDelete(Relation relation);
+
+    public void insertRelation(Relation relation);
+
 }

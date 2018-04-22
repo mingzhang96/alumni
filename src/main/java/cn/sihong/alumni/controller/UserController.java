@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.transform.Result;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -86,6 +87,8 @@ public class UserController {
             int id = Integer.parseInt(request.getParameter("id"));
             User user = new User();
             user.setId(id);
+            user.setXm(request.getParameter("xm"));
+            user.setPassword(request.getParameter("password"));
             user.setName(request.getParameter("username"));
             user.setAddress(request.getParameter("address"));
             user.setMail(request.getParameter("mail"));
@@ -134,6 +137,20 @@ public class UserController {
             }
             return ResultVOUtil.success(resultList);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultVOUtil.error(0, "failed");
+        }
+    }
+
+    @RequestMapping("/changePassword")
+    public ResultVO changePassword(HttpServletRequest request) {
+        try {
+            User user = new User();
+            user.setName(request.getParameter("name"));
+            user.setPassword(request.getParameter("password"));
+            userService.updatePasswordByName(user);
+            return ResultVOUtil.success();
         } catch (Exception e) {
             e.printStackTrace();
             return ResultVOUtil.error(0, "failed");

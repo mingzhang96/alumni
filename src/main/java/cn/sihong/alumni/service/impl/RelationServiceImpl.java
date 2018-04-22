@@ -28,4 +28,14 @@ public class RelationServiceImpl implements RelationService {
     public List<Relation> findRelationByGradeId(int gradeId) {
         return relationDao.findRelationByGradeId(gradeId);
     }
+
+    @Override
+    public void updateDelete(Relation relation) {
+        relationDao.updateDelete(relation);
+    }
+
+    @Override
+    public void insertRelation(Relation relation) {
+        relationDao.insertRelation(relation);
+    }
 }
