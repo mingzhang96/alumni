@@ -217,7 +217,7 @@ public class GradeController {
     public ResultVO deleteMessage(HttpServletRequest request) {
         try {
             Message message = new Message();
-            message.setMessage(request.getParameter("id"));
+            message.setId(Integer.parseInt(request.getParameter("id")));
             gradeService.deleteMessage(message);
             return ResultVOUtil.success();
 

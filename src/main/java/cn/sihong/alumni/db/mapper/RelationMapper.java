@@ -20,22 +20,22 @@ public interface RelationMapper {
      private Integer gradeId;
      */
 
-    @Select("select * from t_relation")
+    @Select("select * from t_relation where is_deleted = 0")
     List<Relation> findList();
 
-    @Select("select * from t_relation where id = #{id}")
+    @Select("select * from t_relation where id = #{id} add is_deleted = 0")
     Relation findRelationById(int id);
 
-    @Select("select * from t_relation where user_id = #{userId}")
+    @Select("select * from t_relation where user_id = #{userId} where is_deleted = 0")
     List<Relation> findRelationByUserId(int userId);
 
-    @Select("select * from t_relation where school_id = #{schoolId}")
+    @Select("select * from t_relation where school_id = #{schoolId} and is_deleted = 0")
     List<Relation> findRelationBySchoolId(int schoolId);
 
-    @Select("select * from t_relation where grade_id = #{gradeId}")
+    @Select("select * from t_relation where grade_id = #{gradeId} and is_deleted = 0")
     List<Relation> findRelationByGradeId(int gradeId);
 
-    @Select("select * from t_relation where school_id = #{schoolId} and grade_id = #{gradeId}")
+    @Select("select * from t_relation where school_id = #{schoolId} and grade_id = #{gradeId} and is_deleted = 0")
     List<Relation> findRelationBySchoolIdGradeId(Map<String, Object> map);
 
     @Update("update t_relation set is_deleted = 1 where user_id = #{userId} and grade_id = #{gradeId}")

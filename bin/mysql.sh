@@ -13,6 +13,7 @@ create table t_user
    mail varchar(100),
    address varchar(100),
    motto varchar(100),
+   xm varchar(100),
    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    finish_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
    is_deleted int default 0
@@ -36,6 +37,8 @@ CREATE TABLE t_grade
    school_id int,
    in_year int,
    class_number int,
+   manager_id int,
+   notice varchar(2000),
    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    finish_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
    is_deleted int default 0

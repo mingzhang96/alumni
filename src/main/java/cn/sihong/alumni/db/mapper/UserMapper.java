@@ -11,13 +11,13 @@ import java.util.List;
 @Repository
 public interface UserMapper {
 
-    @Select("select * from t_user")
+    @Select("select * from t_user where is_deleted = 0")
     List<User> findList();
 
-    @Select("select * from t_user where id = #{id}")
+    @Select("select * from t_user where id = #{id} and is_deleted = 0")
     User findUserById(int id);
 
-    @Select("select * from t_user where name = #{name}")
+    @Select("select * from t_user where name = #{name} and is_deleted = 0")
     User findUserByName(String name);
 
     @Insert("insert into t_user(xm, password, name, qq, phone, wechat, mail, address, motto) values(#{xm}, #{password}, #{name}, #{qq}, #{phone}, #{wechat}, #{mail}, #{address}, #{motto})")

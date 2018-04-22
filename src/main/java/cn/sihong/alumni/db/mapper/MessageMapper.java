@@ -20,7 +20,7 @@ public interface MessageMapper {
      private Date createTime;
      */
 
-    @Select("select * from t_message")
+    @Select("select * from t_message where is_deleted = 0")
     List<Message> findListByGradeId(Message message);
 
     @Insert("insert into t_message(user_id, grade_id, message) values(#{userId}, #{gradeId}, #{message})")

@@ -23,6 +23,7 @@ public class Grade {
         map.put("inYear", inYear);
         map.put("classNumber", classNumber);
         map.put("managerId", managerId);
+        map.put("notice", notice);
         return map;
     }
 

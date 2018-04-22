@@ -106,6 +106,34 @@ public class UserController {
         }
     }
 
+    /**
+     * 注册
+     * @param request
+     * @return
+     */
+    @RequestMapping("/registerUser")
+    public ResultVO registerUser(HttpServletRequest request) {
+        try {
+            User user = new User();
+            user.setXm(request.getParameter("xm"));
+            user.setPassword(request.getParameter("password"));
+            user.setName(request.getParameter("username"));
+            user.setAddress(request.getParameter("address"));
+            user.setMail(request.getParameter("mail"));
+            user.setMotto(request.getParameter("motto"));
+            user.setPhone(request.getParameter("phone"));
+            user.setQq(request.getParameter("qq"));
+            user.setWechat(request.getParameter("wechat"));
+
+            userService.insertUser(user);
+            return ResultVOUtil.success();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultVOUtil.error(0, "failed");
+        }
+    }
+
     @RequestMapping("/findSchool")
     public ResultVO findSchoolByUserId(HttpServletRequest request) {
         try {

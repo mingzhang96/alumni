@@ -47,6 +47,7 @@ public class User {
         map.put("address", address);
         map.put("motto", motto);
         map.put("password", password);
+        map.put("xm", xm);
         return map;
     }
 
