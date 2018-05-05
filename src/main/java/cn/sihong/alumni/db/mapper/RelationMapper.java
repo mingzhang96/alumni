@@ -26,7 +26,7 @@ public interface RelationMapper {
     @Select("select * from t_relation where id = #{id} add is_deleted = 0")
     Relation findRelationById(int id);
 
-    @Select("select * from t_relation where user_id = #{userId} where is_deleted = 0")
+    @Select("select * from t_relation where user_id = #{userId} and is_deleted = 0")
     List<Relation> findRelationByUserId(int userId);
 
     @Select("select * from t_relation where school_id = #{schoolId} and is_deleted = 0")

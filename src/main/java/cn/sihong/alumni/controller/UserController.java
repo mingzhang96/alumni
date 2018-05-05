@@ -117,7 +117,7 @@ public class UserController {
             User user = new User();
             user.setXm(request.getParameter("xm"));
             user.setPassword(request.getParameter("password"));
-            user.setName(request.getParameter("username"));
+            user.setName(request.getParameter("name"));
             user.setAddress(request.getParameter("address"));
             user.setMail(request.getParameter("mail"));
             user.setMotto(request.getParameter("motto"));
